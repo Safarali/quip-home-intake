@@ -1,4 +1,11 @@
 /* =========== Glcbal Settings ============= */
+
+:root {
+  --light-gray: #ecf0f1;
+  --dark-gray: #919799;
+  --btn-color: #25b4e9;
+  --text-color: #0E2431;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,4 +17,128 @@ html * {
   font-family: 'Montserrat', sans-serif;
   -webkit-text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+
+/* ============ Container Style ============= */
+
+.container {
+  display: flex;
+  padding: 50px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.app_container {
+  padding: 20px;
+  width: 600px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  background-color: rgba(249, 251, 252, 0.6);
+}
+
+/* ============== App Style ================= */
+
+/* Todo add input */
+.add_todo_box {
+  position: relative;
+  margin-bottom: 10px;
+}
+.add_todo, li{
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  padding: 10px;
+  font-size: 70%;
+  color: var(--text-color);
+  background-color: #fff;
+}
+
+.add_todo:focus {
+  outline: none;
+  border-color: #6ACCF0;
+}
+
+.add_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: var(--btn-color);
+  border: none;
+  font-size: 70%;
+  color: #fff;
+}
+
+.add_btn:hover,
+.add_btn:focus,
+.add_btn:active {
+  outline: none;
+  background-color: #6ACCF0;
+}
+
+/* To Do List */
+
+.todo_list_box {
+  list-style-type: none;
+}
+
+.todo_li {
+  height: 40px;
+  padding-left: 45px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.marked_todo_li{
+  color: var(--dark-gray);
+  text-decoration: line-through;
+}
+
+/* Checkbox */
+
+input[type='checkbox'] {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  -webkit-appearance:none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 2px;
+    border: 2px solid var(--text-color);
+    outline:0px !important;
+}
+
+input[type="checkbox"]:checked {
+  border: 2px solid var(--dark-gray);
+}
+
+input[type='checkbox']:checked:after {
+  outline: none !important;
+  content: 'L';
+  font-size: 80%;
+  display: block;
+  transform: scaleX(-1) rotate(-30deg);
+  position: relative;
+  left: -3px;
+  bottom: 3px;
+  color: var(--dark-gray);
+}
+
+
+/* Placeholder */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  opacity: 0.7;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  opacity: 0.7;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  opacity: 0.7;
+}
+:-moz-placeholder { /* Firefox 18- */
+  opacity: 0.7;
 }
